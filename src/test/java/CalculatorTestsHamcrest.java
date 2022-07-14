@@ -11,7 +11,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
 
-public class CalculatorTests {
+public class CalculatorTestsHamcrest {
     Calculator sut;
 
     @BeforeAll
@@ -40,8 +40,8 @@ public class CalculatorTests {
         double a = 80, b = 20, expected = 60;
 
         double result = sut.deduction(a, b);
-
-        assertEquals(expected, result);
+        assertThat(result, equalTo(expected));
+        //assertEquals(expected, result);
     }
 
     @Test
@@ -49,8 +49,8 @@ public class CalculatorTests {
         double a = 80, b = 20, expected = 100;
 
         double result = sut.addition(a, b);
-
-        assertEquals(expected, result);
+        assertThat(result, equalTo(expected));
+        //assertEquals(expected, result);
     }
 
     @Test
@@ -59,7 +59,8 @@ public class CalculatorTests {
 
         double result = sut.multiplication(a, b);
 
-        assertEquals(expected, result);
+        //assertEquals(expected, result);
+        assertThat(result, equalTo(expected));
     }
 
     @Test
@@ -68,7 +69,9 @@ public class CalculatorTests {
 
         int result = sut.division(a, b);
 
-        assertEquals(expected, result);
+
+       // assertEquals(expected, result);
+        assertThat(result, equalTo(expected));
     }
 
     @Test
@@ -87,7 +90,8 @@ public class CalculatorTests {
 
         int result = sut.linearEquation(x);
 
-        assertEquals(expected, result);
+        //assertEquals(expected, result);
+        assertThat(result, equalTo(expected));
     }
 
     public static Stream<Arguments> source() {
